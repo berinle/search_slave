@@ -4,7 +4,12 @@
 
 <hibernate-configuration>
 	<session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="hibernate.connection.username">rabbit</property>
+        <property name="hibernate.connection.password">rabb1T</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/hsdemo</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <property name="hibernate.search.worker.backend">jms</property>
 
@@ -14,8 +19,9 @@
 
         <property name="hibernate.search.default.directory_provider">org.hibernate.search.store.FSSlaveDirectoryProvider</property>
         <property name="hibernate.search.default.refresh">1800</property>
-        <property name="hibernate.search.default.indexBase">/tmp/lucene_indexes/hsdemo</property>
-        <property name="hibernate.search.default.sourceBase">/tmp/mnt/share</property>
+
+        <property name="hibernate.search.default.indexBase">/Users/berinle/tmp/lucenedir/hsdemo</property>
+        <property name="hibernate.search.default.sourceBase">/Users/berinle/tmp/mnt/share</property>
 
         <mapping class="com.jrock.hsdemo.Movie"/>
 
